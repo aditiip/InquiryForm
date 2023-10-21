@@ -5,6 +5,7 @@ import Product_Information from "../scenes/Product_Information";
 import PackagingDelivery_Information from "../scenes/PackagingDelivery_Information";
 import Get_Sample from "../scenes/Get_Sample";
 import Other_Information from "../scenes/Other_Information";
+import './Forms_Structure.css';
 
 function Forms_Structure() {
 
@@ -89,13 +90,13 @@ function Forms_Structure() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h5>
-        <strong>
+      <h1>INQUIRY</h1>
+      <div className="instructions">
           Fill out below Inquiry-form and get Quotation on Email, * Fields are
-          mandatory
-        </strong>
-      </h5>
-      <div className="formsInput">
+          mandatory 
+      </div>
+      <hr />
+      <div className="formsInput">    
         <Company_Information 
           companyName={formInfo.companyName}
           companyAddress={formInfo.companyAddress}
@@ -104,7 +105,7 @@ function Forms_Structure() {
           city={formInfo.city}
           pincode={formInfo.pincode}
           handleInputChange={handleInputChange}
-          />
+          /><hr />
         < Contact_Information 
           contactPerson={formInfo.contactPerson}
           gender={formInfo.gender}
@@ -116,20 +117,20 @@ function Forms_Structure() {
           wechatNumber={formInfo.wechatNumber}
           website={formInfo.website}
           handleInputChange={handleInputChange}
-          />
+          /><hr />
         <Product_Information 
           productBentonite={formInfo.productBentonite}
           productBentoniteOther={formInfo.productBentoniteOther}
           application={formInfo.application}
           handleInputChange={handleInputChange}
-          />
+          /><hr />
         <PackagingDelivery_Information 
           packingType={formInfo.packingType}
           packingQty={formInfo.packingQty}
           packingQtyValue={formInfo.packingQtyValue}
           deliveryMode={formInfo.deliveryMode}
           handleInputChange={handleInputChange}
-          />
+          /><hr />
         <Get_Sample 
           getSampleOnAddress={formInfo.getSampleOnAddress}
           getSampleInCountry={formInfo.getSampleInCountry}
@@ -137,13 +138,14 @@ function Forms_Structure() {
           getSampleInCity={formInfo.getSampleInCity}
           getSampleOnPincode={formInfo.getSampleOnPincode}
           handleInputChange={handleInputChange}
-          />
+          /><hr />
         <Other_Information 
           notesOrRemarks={formInfo.notesOrRemarks}
           emailForQuotation={formInfo.emailForQuotation}
           handleInputChange={handleInputChange}
           />
         </div>
+        <hr />
         <input type='submit' id="submit-button" name="submit-button" />
     </form>
   );
